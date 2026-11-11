@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игра — Полный привод</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <h1 class="logo">🚗 Полный привод</h1>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="interests.html">Мои интересы</a></li>
+                <li><a href="recommendations.html">Мои рекомендации</a></li>
+                <li><a href="places.html">Места и впечатления</a></li>
+                <li><a href="favorite.html">Фаворит</a></li>
+                <li><a href="game.html" class="active">🎮 Игра</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="game-section">
+            <h2>🏁 Мини-игра: «Увернись от встречки!»</h2>
+            <div class="game-intro">
+                <p><strong>Управление:</strong> стрелки ← → (или A / D) для смены полосы.</p>
+                <p><strong>Цель:</strong> проехать как можно дальше и не врезаться во встречный транспорт.</p>
+                <p><strong>Пауза:</strong> клавиша <kbd>P</kbd>. <strong>Рестарт:</strong> <kbd>R</kbd> или кнопка.</p>
+            </div>
+
+            <div class="game-wrapper">
+                <div class="game-hud">
+                    <div class="hud-item">Счёт: <span id="score">0</span></div>
+                    <div class="hud-item">Рекорд: <span id="highscore">0</span></div>
+                    <div class="hud-item">Скорость: <span id="speed">1.0</span>x</div>
+                </div>
+
+                <canvas id="gameCanvas" width="400" height="600"></canvas>
+
+                <div id="gameOver" class="game-over hidden">
+                    <h3>💥 Авария!</h3>
+                    <p>Твой счёт: <span id="finalScore">0</span></p>
+                    <button id="restartBtn" class="game-btn">🔄 Начать заново</button>
+                </div>
+
+                <div id="startScreen" class="start-screen">
+                    <h3>🚦 Готов к заезду?</h3>
+                    <button id="startBtn" class="game-btn">▶ Старт</button>
+                </div>
+            </div>
+
+            <p class="game-tip">Совет: следи за скоростью — чем она выше, тем чаще появляются машины!</p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Полный привод. Блог о машинах и дорогах.</p>
+    </footer>
+
+    <script src="js/game.js"></script>
+</body>
+</html>
